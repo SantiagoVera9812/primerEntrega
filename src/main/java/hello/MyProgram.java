@@ -30,9 +30,9 @@ public class MyProgram {
             float porcentajeFueraRango = Float.parseFloat(cmd.getOptionValue("f"));
             float porcentajeIncorrecto = Float.parseFloat(cmd.getOptionValue("i"));
 
-            // Verificamos que los argumentos sean números válidos
+            
             if (isValidFloat(porcentajeCorrecto) && isValidFloat(porcentajeIncorrecto) && isValidFloat(porcentajeFueraRango)) {
-                // Verificamos que la suma de los argumentos sea igual a 1
+                // Verificamos que la suma de los argumentos sea igual a 1 SE DEBERA CONTINUAR AQUI
                 if (porcentajeCorrecto + porcentajeFueraRango + porcentajeIncorrecto == 1.0f) {
                     System.out.println("Primer argumento: " + porcentajeCorrecto);
                     System.out.println("Segundo argumento: " + porcentajeFueraRango);
@@ -48,7 +48,7 @@ public class MyProgram {
         }
     }
 
-    // Función para verificar si un número en punto flotante es válido
+    
     private static boolean isValidFloat(float num) {
         return num >= 0.0f && num <= 1.0f;
     }
