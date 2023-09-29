@@ -61,15 +61,22 @@ public class MyProgram {
 
                     if(flagBigBro){
 
-                        //Generar rango correcto
+                        Float valorEncontrado = Util.generarNumeroAleatorioEntreRango(68f, 89f);
+                        System.out.println(valorEncontrado);
 
                         
                     }else if(flagMiddleKid){
 
-                        //Generar rango fuera de rango
+                        Float valorEncontrador = Util.generarNumeroAleatorioEntreRango(0.0f, 67.0f);
+                        System.out.println(valorEncontrador);
+
+                        
                     }else{
 
-                        //Generar rango incorrecto
+                        Float valorEncontrado = Util.generarNumeroAleatorioEntreRango(-68f, -1f);
+                        System.out.println(valorEncontrado);
+
+                        
 
                     }
 
