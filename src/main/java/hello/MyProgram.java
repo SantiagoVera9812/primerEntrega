@@ -1,6 +1,9 @@
 package hello;
 
-
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -30,13 +33,47 @@ public class MyProgram {
             float porcentajeFueraRango = Float.parseFloat(cmd.getOptionValue("f"));
             float porcentajeIncorrecto = Float.parseFloat(cmd.getOptionValue("i"));
 
-            
             if (isValidFloat(porcentajeCorrecto) && isValidFloat(porcentajeIncorrecto) && isValidFloat(porcentajeFueraRango)) {
                 // Verificamos que la suma de los argumentos sea igual a 1 SE DEBERA CONTINUAR AQUI
                 if (porcentajeCorrecto + porcentajeFueraRango + porcentajeIncorrecto == 1.0f) {
-                    System.out.println("Primer argumento: " + porcentajeCorrecto);
-                    System.out.println("Segundo argumento: " + porcentajeFueraRango);
-                    System.out.println("Tercer argumento: " + porcentajeIncorrecto);
+                    Random random = new Random();
+
+                    List<Float> rangos = new ArrayList<>();
+                    //CONTINUAR DESDE AQUI
+                    float rangoCienArg1 = porcentajeCorrecto*Constantes.CIEN;
+
+                    float rangoCienArg2 = porcentajeFueraRango*Constantes.CIEN;
+
+                    float rangoCienArg3 = porcentajeIncorrecto*Constantes.CIEN;
+
+                    rangos.add(rangoCienArg1);
+                    rangos.add(rangoCienArg2);
+                    rangos.add(rangoCienArg3);
+                 
+                    Collections.sort(rangos,Collections.reverseOrder());
+
+                    int numeroAleatorioEntre0y100 = random.nextInt(101);
+                    
+                    System.out.println(numeroAleatorioEntre0y100);
+                    boolean flagBigBro = Util.estaEnRango(numeroAleatorioEntre0y100, 100, rangos.get(0));
+                    boolean flagMiddleKid = Util.estaEnRango(numeroAleatorioEntre0y100, rangos.get(0), rangos.get(1));
+                    boolean flagSmall = Util.estaEnRango(numeroAleatorioEntre0y100, rangos.get(1), rangos.get(2));
+
+                    if(flagBigBro){
+
+                        //Generar rango correcto
+
+                        
+                    }else if(flagMiddleKid){
+
+                        //Generar rango fuera de rango
+                    }else{
+
+                        //Generar rango incorrecto
+
+                    }
+
+
                 } else {
                     System.err.println("La suma de los argumentos debe ser igual a 1.");
                 }
@@ -52,5 +89,6 @@ public class MyProgram {
     private static boolean isValidFloat(float num) {
         return num >= 0.0f && num <= 1.0f;
     }
+
 }
 
