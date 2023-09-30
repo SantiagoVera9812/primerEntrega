@@ -25,14 +25,15 @@ public class Servidor extends Conexion{
     out.println("Peticion recibida y aceptada");
     String mensajeCliente = "";
 
-    String status ="whyyyyyyyy";
+    String status ="";
     
     Float numeroRecibido = new Float(0.0f);
     
     while((mensajeCliente = entrada.readLine()) != null){
        if(mensajeCliente.equals("FIN")){
 
-        break;
+        //Terminado
+        startServer();
        }
     
     try{

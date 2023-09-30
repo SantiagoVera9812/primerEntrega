@@ -37,6 +37,10 @@ public class Configuracion {
             if (isValidFloat(porcentajeCorrecto) && isValidFloat(porcentajeIncorrecto) && isValidFloat(porcentajeFueraRango)) {
                 // Verificamos que la suma de los argumentos sea igual a 1 SE DEBERA CONTINUAR AQUI
                 if (porcentajeCorrecto + porcentajeFueraRango + porcentajeIncorrecto == 1.0f) {
+                
+                    int ms = Constantes.MS;
+                    
+                    while(true){
                     Random random = new Random();
 
                     List<Float> rangos = new ArrayList<>();
@@ -75,18 +79,23 @@ public class Configuracion {
                         cli.startClient(valorEncontrador);
 
                         
-                    }else{
+                    }else if(flagSmall){
 
                         Float valorEncontrado = Util.generarNumeroAleatorioEntreRango(-68f, -1f);
                         System.out.println(valorEncontrado);
                         cli.startClient(valorEncontrado);
                         
+                    }else{
+                        break;
                     }
+                    Util.wait(ms);
+                
                 }catch(IOException e){
 
                     System.out.println(e.getMessage());
+                    break;
                 }
-
+            }
                 } else {
                     System.err.println("La suma de los argumentos debe ser igual a 1.");
                 }
