@@ -9,7 +9,7 @@ public class Servidor extends Conexion{
 
     public Servidor() throws IOException{super("servidor");}
 
-    public Float startServer() throws IOException{
+    public String startServer() throws IOException{
 
 
     System.out.println("Esperando............");
@@ -24,7 +24,10 @@ public class Servidor extends Conexion{
 
     out.println("Peticion recibida y aceptada");
     String mensajeCliente = "";
+
+    String status ="";
     
+    Float numeroRecibido = new Float(0.0f);
     
     while((mensajeCliente = entrada.readLine()) != null){
        if(mensajeCliente.equals("FIN")){
@@ -34,15 +37,26 @@ public class Servidor extends Conexion{
     
     try{
 
-        Float numeroRecibido = Float.parseFloat(mensajeCliente);
-        return numeroRecibido;
+        numeroRecibido = Float.parseFloat(mensajeCliente);
+        System.out.println(mensajeCliente);
+        if(Util.estaEnRango(numeroRecibido, 89f, 68f)){
+          status = "Correcto";
+
+        }else if(Util.estaEnRango(numeroRecibido, 67f, 0f)){
+            status = "Fuera de rango";
+        }
+        else if(Util.estaEnRango(numeroRecibido, -1f, -68f)){
+            status = "Invalido";
+        }
+
+        
     }catch(NumberFormatException e){
         System.err.println("Float invalido");
     }
     }
     
 
-    return null;
+    return status;
 }
     
 }

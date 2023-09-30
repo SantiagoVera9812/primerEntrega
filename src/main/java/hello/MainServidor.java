@@ -10,9 +10,9 @@ public class MainServidor {
 
         System.out.println("Iniciando servidor\n");
 
-        Float newFloat = new Float("0f");
+        String status = "";
 
-        newFloat = serv.startServer();
+        status = serv.startServer();
     }
     
 }

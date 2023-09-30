@@ -64,18 +64,21 @@ public class Configuracion {
                     if(flagBigBro){
 
                         Float valorEncontrado = Util.generarNumeroAleatorioEntreRango(68f, 89f);
+                        System.out.println(valorEncontrado);
                         cli.startClient(valorEncontrado);
 
                         
                     }else if(flagMiddleKid){
 
                         Float valorEncontrador = Util.generarNumeroAleatorioEntreRango(0.0f, 67.0f);
+                        System.out.println(valorEncontrador);
                         cli.startClient(valorEncontrador);
 
                         
                     }else{
 
                         Float valorEncontrado = Util.generarNumeroAleatorioEntreRango(-68f, -1f);
+                        System.out.println(valorEncontrado);
                         cli.startClient(valorEncontrado);
                         
                     }
