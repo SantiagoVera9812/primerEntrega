@@ -18,5 +18,16 @@ public class Util {
         return random.nextFloat()*(maximo-minimo+1)+minimo;
 
     }
+
+    public static void wait(int ms)
+    {
+    
+        try{
+            Thread.sleep(ms);
+        }
+        catch(InterruptedException ex){
+            Thread.currentThread().interrupt();
+        }
+    }
     
 }

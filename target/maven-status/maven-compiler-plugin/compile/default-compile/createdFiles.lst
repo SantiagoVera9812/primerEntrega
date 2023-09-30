@@ -1,3 +1,7 @@
 hello/Constantes.class
+hello/Cliente.class
+hello/Servidor.class
+hello/Conexion.class
+hello/Configuracion.class
 hello/Util.class
-hello/MyProgram.class
+hello/MainServidor.class
