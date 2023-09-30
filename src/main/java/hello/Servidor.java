@@ -25,7 +25,7 @@ public class Servidor extends Conexion{
     out.println("Peticion recibida y aceptada");
     String mensajeCliente = "";
 
-    String status ="";
+    String status ="whyyyyyyyy";
     
     Float numeroRecibido = new Float(0.0f);
     
@@ -38,7 +38,7 @@ public class Servidor extends Conexion{
     try{
 
         numeroRecibido = Float.parseFloat(mensajeCliente);
-        System.out.println(mensajeCliente);
+        System.out.println(numeroRecibido);
         if(Util.estaEnRango(numeroRecibido, 89f, 68f)){
           status = "Correcto";
 
@@ -49,13 +49,15 @@ public class Servidor extends Conexion{
             status = "Invalido";
         }
 
+        out.println(status);
+
         
     }catch(NumberFormatException e){
         System.err.println("Float invalido");
     }
     }
     
-
+    
     return status;
 }
     

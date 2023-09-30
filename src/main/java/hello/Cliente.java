@@ -10,9 +10,9 @@ public class Cliente extends Conexion {
 
     public Cliente() throws IOException{super("cliente");}
 
-    public void startClient(float numeroConfiguracion)
+    public String startClient(float numeroConfiguracion)
     {
-
+        String resultado = "";
         try{
 
         BufferedReader in = new BufferedReader(new InputStreamReader(cs.getInputStream()));
@@ -24,14 +24,17 @@ public class Cliente extends Conexion {
 
         out.println(numeroConfiguracion);
 
+         out.println("FIN");
 
-        out.println("FIN");
 
-        String resultado = in.readLine();
+        resultado = in.readLine();
 
         System.out.println(resultado);
 
+        
         cs.close();
+
+        return resultado;
 
         }catch (ConnectException e2){
 
@@ -42,7 +45,7 @@ public class Cliente extends Conexion {
         }
 
 
-
+     return resultado;
 
     }
     
