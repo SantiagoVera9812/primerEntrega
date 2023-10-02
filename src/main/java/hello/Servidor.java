@@ -48,7 +48,9 @@ public class Servidor extends Conexion{
                 BufferedReader entrada = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
     
         PrintWriter out = new PrintWriter(clientSocket.getOutputStream(),true);
-    
+        lock.lock();
+        
+        try{
         out.println("Peticion recibida y aceptada");
         
         String mensajeCliente = "";
@@ -78,13 +80,18 @@ public class Servidor extends Conexion{
             else if(Util.estaEnRango(numeroRecibido, -1f, -68f)){
                 status = "Invalido";
             }
-            
+
             out.println(status);
             
             
         }catch(NumberFormatException e){
             System.err.println("Float invalido");
         }
+        
+    }}finally{
+
+        lock.unlock();
+    
     }
 }catch(IOException e){
     e.printStackTrace();

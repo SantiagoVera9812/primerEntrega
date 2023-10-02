@@ -15,6 +15,8 @@ public class Cliente extends Conexion {
         String resultado = "";
         try{
 
+            System.out.println(numeroConfiguracion);
+
         BufferedReader in = new BufferedReader(new InputStreamReader(cs.getInputStream()));
         PrintWriter out = new PrintWriter(cs.getOutputStream(), true);
 
@@ -25,7 +27,7 @@ public class Cliente extends Conexion {
         out.println(numeroConfiguracion);
 
          out.println("FIN");
-
+        out.flush();
 
         resultado = in.readLine();
 

@@ -58,10 +58,11 @@ public class Configuracion {
                     Collections.sort(rangos,Collections.reverseOrder());
 
                     int numeroAleatorioEntre0y100 = random.nextInt(101);
-                    
+                
                     boolean flagBigBro = Util.estaEnRango(numeroAleatorioEntre0y100, 100, rangos.get(0));
                     boolean flagMiddleKid = Util.estaEnRango(numeroAleatorioEntre0y100, rangos.get(0), rangos.get(1));
                     boolean flagSmall = Util.estaEnRango(numeroAleatorioEntre0y100, rangos.get(1), rangos.get(2));
+                    boolean flagNoEntra = Util.estaEnRango(numeroAleatorioEntre0y100, rangos.get(2), 0);
                     try{
                     Cliente cli = new Cliente();
 
@@ -69,6 +70,9 @@ public class Configuracion {
 
                         Float valorEncontrado = Util.generarNumeroAleatorioEntreRango(68f, 89f);
                         System.out.println(valorEncontrado);
+                        System.out.println(flagBigBro);
+                         System.out.println(flagMiddleKid);
+                          System.out.println(flagSmall);
                         cli.startClient(valorEncontrado);
 
                         
@@ -76,6 +80,9 @@ public class Configuracion {
 
                         Float valorEncontrador = Util.generarNumeroAleatorioEntreRango(0.0f, 67.0f);
                         System.out.println(valorEncontrador);
+                        System.out.println(flagBigBro);
+                         System.out.println(flagMiddleKid);
+                          System.out.println(flagSmall);
                         cli.startClient(valorEncontrador);
 
                         
@@ -83,9 +90,18 @@ public class Configuracion {
 
                         Float valorEncontrado = Util.generarNumeroAleatorioEntreRango(-68f, -1f);
                         System.out.println(valorEncontrado);
+                        System.out.println(flagBigBro);
+                         System.out.println(flagMiddleKid);
+                          System.out.println(flagSmall);
                         cli.startClient(valorEncontrado);
                         
+                    }else if(flagNoEntra){
+                        
+                        Float valorEncontrado = Util.generarNumeroAleatorioEntreRango(-68f, -1f);
+                        cli.startClient(valorEncontrado);
+        
                     }else{
+
                         break;
                     }
                     Util.wait(ms);
