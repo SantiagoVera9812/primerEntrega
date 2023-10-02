@@ -1,7 +1,9 @@
-/home/santiagovera/primerEntregaDistribuidos/src/main/java/hello/Configuracion.java
 /home/santiagovera/primerEntregaDistribuidos/src/main/java/hello/Cliente.java
+/home/santiagovera/primerEntregaDistribuidos/src/main/java/hello/SensorPH.java
 /home/santiagovera/primerEntregaDistribuidos/src/main/java/hello/MainServidor.java
 /home/santiagovera/primerEntregaDistribuidos/src/main/java/hello/Constantes.java
 /home/santiagovera/primerEntregaDistribuidos/src/main/java/hello/Util.java
+/home/santiagovera/primerEntregaDistribuidos/src/main/java/hello/SensorOxigeno.java
 /home/santiagovera/primerEntregaDistribuidos/src/main/java/hello/Conexion.java
+/home/santiagovera/primerEntregaDistribuidos/src/main/java/hello/SensorTemperatura.java
 /home/santiagovera/primerEntregaDistribuidos/src/main/java/hello/Servidor.java

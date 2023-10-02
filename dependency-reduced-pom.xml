@@ -52,9 +52,59 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>hello.Configuracion</mainClass>
+                  <mainClass>hello.SensorTemperatura</mainClass>
                 </transformer>
               </transformers>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.0.0</version>
+        <executions>
+          <execution>
+            <id>run-configuracion-temperatura</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>java</goal>
+            </goals>
+            <configuration>
+              <mainClass>hello.SensorPH</mainClass>
+              <arguments>
+                <argument>-c</argument>
+                <argument>0.7</argument>
+                <argument>-f</argument>
+                <argument>0.2</argument>
+                <argument>-i</argument>
+                <argument>0.1</argument>
+              </arguments>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.0.0</version>
+        <executions>
+          <execution>
+            <id>run-configuracion-oxigeno</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>java</goal>
+            </goals>
+            <configuration>
+              <mainClass>hello.SensorOxigeno</mainClass>
+              <arguments>
+                <argument>-c</argument>
+                <argument>0.7</argument>
+                <argument>-f</argument>
+                <argument>0.2</argument>
+                <argument>-i</argument>
+                <argument>0.1</argument>
+              </arguments>
             </configuration>
           </execution>
         </executions>

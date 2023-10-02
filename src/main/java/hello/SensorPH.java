@@ -13,7 +13,7 @@ import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 
-public class Configuracion {
+public class SensorPH {
     public static void main(String[] args) {
         Options options = new Options();
 
@@ -68,31 +68,22 @@ public class Configuracion {
 
                     if(flagBigBro){
 
-                        Float valorEncontrado = Util.generarNumeroAleatorioEntreRango(68f, 89f);
+                        Float valorEncontrado = Util.generarNumeroAleatorioEntreRango(6f, 8f);
                         System.out.println(valorEncontrado);
-                        System.out.println(flagBigBro);
-                         System.out.println(flagMiddleKid);
-                          System.out.println(flagSmall);
+                        
                         cli.startClient(valorEncontrado);
 
                         
                     }else if(flagMiddleKid){
 
-                        Float valorEncontrador = Util.generarNumeroAleatorioEntreRango(0.0f, 67.0f);
+                        Float valorEncontrador = Util.generarNumeroAleatorioEntreRango(0.0f, 5.9f);
                         System.out.println(valorEncontrador);
-                        System.out.println(flagBigBro);
-                         System.out.println(flagMiddleKid);
-                          System.out.println(flagSmall);
                         cli.startClient(valorEncontrador);
 
                         
                     }else if(flagSmall){
 
-                        Float valorEncontrado = Util.generarNumeroAleatorioEntreRango(-68f, -1f);
-                        System.out.println(valorEncontrado);
-                        System.out.println(flagBigBro);
-                         System.out.println(flagMiddleKid);
-                          System.out.println(flagSmall);
+                        Float valorEncontrado = Util.generarNumeroAleatorioEntreRango(-5.9f, -1f);
                         cli.startClient(valorEncontrado);
                         
                     }else if(flagNoEntra){
