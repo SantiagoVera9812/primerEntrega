@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -55,7 +56,7 @@ public class Servidor extends Conexion{
         
         String mensajeCliente = "";
     
-        String status ="";
+        
         
         Float numeroRecibido = new Float(0.0f);
 
@@ -68,9 +69,12 @@ public class Servidor extends Conexion{
            }
         
         try{
-    
-            numeroRecibido = Float.parseFloat(mensajeCliente);
+            
+            ArrayList<String> respuestaCliente = Util.splitSentence(mensajeCliente);
+            numeroRecibido = Float.parseFloat(respuestaCliente.get(0));
             System.out.println(numeroRecibido);
+            if(respuestaCliente.get(1).equals(Constantes.TEMPERATURA)){
+                String status ="";
             if(Util.estaEnRango(numeroRecibido, 89f, 68f)){
               status = "Correcto";
     
@@ -82,9 +86,50 @@ public class Servidor extends Conexion{
             }
 
             out.println(status);
+
+        }else if(respuestaCliente.get(1).equals(Constantes.PH)){
+            String status ="";
+            System.out.println(respuestaCliente.get(1));
+            System.out.println(numeroRecibido);
+            if(Util.estaEnRango(numeroRecibido, 8f, 6f)){
             
+              status = "Correcto";
+    
+            }else if(Util.estaEnRango(numeroRecibido, 7.9f, 0f)){
+                
+                status = "Fuera de rango";
+            }
+            else if(Util.estaEnRango(numeroRecibido, -1f, -6f)){
+               
+                status = "Invalido";
+            }
+            System.out.println(status);
+            out.println(status);
+        }else if(respuestaCliente.get(1).equals(Constantes.OXIGENO)){
+            System.out.println(numeroRecibido);
+
+             String status ="";
+            if(Util.estaEnRango(numeroRecibido, 11f, 2f)){
+                
+              status = "Correcto";
+    
+            }else if(Util.estaEnRango(numeroRecibido, 1.9f, 0f)){
+                
+                status = "Fuera de rango";
+            }
+            else if(Util.estaEnRango(numeroRecibido, -1f, -68f)){
+                
+                status = "Invalido";
+            }
+             System.out.println(status);
+            out.println(status);
+
+
+        }
+
+        }
             
-        }catch(NumberFormatException e){
+        catch(NumberFormatException e){
             System.err.println("Float invalido");
         }
         

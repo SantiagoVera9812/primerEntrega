@@ -10,7 +10,7 @@ public class Cliente extends Conexion {
 
     public Cliente() throws IOException{super("cliente");}
 
-    public String startClient(float numeroConfiguracion)
+    public String startClient(float numeroConfiguracion, String tipo)
     {
         String resultado = "";
         try{
@@ -24,10 +24,10 @@ public class Cliente extends Conexion {
         System.out.println("Respuesta del servidor: "+ respuesta);
         
 
-        out.println(numeroConfiguracion);
+        out.println(numeroConfiguracion + " " + tipo);
 
          out.println("FIN");
-        out.flush();
+        
 
         resultado = in.readLine();
 

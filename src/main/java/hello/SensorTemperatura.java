@@ -71,7 +71,7 @@ public class SensorTemperatura {
                         Float valorEncontrado = Util.generarNumeroAleatorioEntreRango(68f, 89f);
                         System.out.println(valorEncontrado);
                        
-                        cli.startClient(valorEncontrado);
+                        cli.startClient(valorEncontrado,Constantes.TEMPERATURA);
 
                         
                     }else if(flagMiddleKid){
@@ -79,7 +79,7 @@ public class SensorTemperatura {
                         Float valorEncontrador = Util.generarNumeroAleatorioEntreRango(0.0f, 67.0f);
                         System.out.println(valorEncontrador);
                     
-                        cli.startClient(valorEncontrador);
+                        cli.startClient(valorEncontrador,Constantes.TEMPERATURA);
 
                         
                     }else if(flagSmall){
@@ -87,12 +87,12 @@ public class SensorTemperatura {
                         Float valorEncontrado = Util.generarNumeroAleatorioEntreRango(-68f, -1f);
                         System.out.println(valorEncontrado);
             
-                        cli.startClient(valorEncontrado);
+                        cli.startClient(valorEncontrado,Constantes.TEMPERATURA);
                         
                     }else if(flagNoEntra){
                         
                         Float valorEncontrado = Util.generarNumeroAleatorioEntreRango(-68f, -1f);
-                        cli.startClient(valorEncontrado);
+                        cli.startClient(valorEncontrado,Constantes.TEMPERATURA);
         
                     }else{
 

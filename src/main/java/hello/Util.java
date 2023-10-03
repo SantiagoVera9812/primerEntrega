@@ -1,5 +1,7 @@
 package hello;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class Util {
@@ -28,6 +30,16 @@ public class Util {
         catch(InterruptedException ex){
             Thread.currentThread().interrupt();
         }
+    }
+
+    public static ArrayList<String> splitSentence(String sentence) {
+        
+        String[] wordsArray = sentence.split(" ");
+        
+        
+        ArrayList<String> wordsList = new ArrayList<>(Arrays.asList(wordsArray));
+
+        return wordsList;
     }
     
 }

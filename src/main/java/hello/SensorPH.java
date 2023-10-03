@@ -71,25 +71,25 @@ public class SensorPH {
                         Float valorEncontrado = Util.generarNumeroAleatorioEntreRango(6f, 8f);
                         System.out.println(valorEncontrado);
                         
-                        cli.startClient(valorEncontrado);
+                        cli.startClient(valorEncontrado,Constantes.PH);
 
                         
                     }else if(flagMiddleKid){
 
-                        Float valorEncontrador = Util.generarNumeroAleatorioEntreRango(0.0f, 5.9f);
+                        Float valorEncontrador = Util.generarNumeroAleatorioEntreRango(0.0f, 7.9f);
                         System.out.println(valorEncontrador);
-                        cli.startClient(valorEncontrador);
+                        cli.startClient(valorEncontrador,Constantes.PH);
 
-                        
+                        String status ="";
                     }else if(flagSmall){
 
                         Float valorEncontrado = Util.generarNumeroAleatorioEntreRango(-5.9f, -1f);
-                        cli.startClient(valorEncontrado);
+                        cli.startClient(valorEncontrado,Constantes.PH);
                         
                     }else if(flagNoEntra){
                         
                         Float valorEncontrado = Util.generarNumeroAleatorioEntreRango(-68f, -1f);
-                        cli.startClient(valorEncontrado);
+                        cli.startClient(valorEncontrado,Constantes.PH);
         
                     }else{
 

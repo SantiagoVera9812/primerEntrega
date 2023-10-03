@@ -71,7 +71,7 @@ public class SensorOxigeno {
                         Float valorEncontrado = Util.generarNumeroAleatorioEntreRango(2f, 11f);
                         System.out.println(valorEncontrado);
                        
-                        cli.startClient(valorEncontrado);
+                        cli.startClient(valorEncontrado,Constantes.OXIGENO);
 
                         
                     }else if(flagMiddleKid){
@@ -79,7 +79,7 @@ public class SensorOxigeno {
                         Float valorEncontrador = Util.generarNumeroAleatorioEntreRango(0.0f, 1.9f);
                         System.out.println(valorEncontrador);
                     
-                        cli.startClient(valorEncontrador);
+                        cli.startClient(valorEncontrador,Constantes.OXIGENO);
 
                         
                     }else if(flagSmall){
@@ -87,12 +87,12 @@ public class SensorOxigeno {
                         Float valorEncontrado = Util.generarNumeroAleatorioEntreRango(-11f, -1f);
                         System.out.println(valorEncontrado);
             
-                        cli.startClient(valorEncontrado);
+                        cli.startClient(valorEncontrado,Constantes.OXIGENO);
                         
                     }else if(flagNoEntra){
                         
                         Float valorEncontrado = Util.generarNumeroAleatorioEntreRango(-11f, -1f);
-                        cli.startClient(valorEncontrado);
+                        cli.startClient(valorEncontrado,Constantes.OXIGENO);
         
                     }else{
 
